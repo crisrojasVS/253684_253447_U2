@@ -37,7 +37,7 @@ public class Carrera {
 
     public void mostrarAlumnos() {
         if (alumnos.isEmpty()) {
-            System.out.println("   (sin alumnos)");
+            System.out.println("(sin alumnos)");
         }
         for (Alumno a : alumnos) {
             System.out.println("   - " + a);

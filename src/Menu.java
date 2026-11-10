@@ -8,7 +8,7 @@ public class Menu {
     public void iniciar() {
         int opcion;
         do {
-            System.out.println("\n CONTROL ESCOLAR ");
+            System.out.println("\n    CONTROL ESCOLAR    ");
             System.out.println("1. Ver carreras y alumnos");
             System.out.println("2. Consultar alumno por matrícula");
             System.out.println("3. Cambio de carrera");
@@ -58,6 +58,13 @@ public class Menu {
         String nombre = leerTexto("Nombre: ");
         String matricula = leerTexto("Matrícula: ");
         int cuatrimestre = leerEntero("Cuatrimestre actual: ");
+
+        // Se valida en el momento, antes de pedir la carrera
+        if (cuatrimestre < 1) {
+            System.out.println("Cuatrimestre no válido.");
+            return;
+        }
+
         mostrarCarreras();
         int num = leerEntero("Número de carrera: ");
 
@@ -77,13 +84,11 @@ public class Menu {
         System.out.println(gestor.cambiarCarrera(matricula, num));
     }
 
-    // Muestra un mensaje y lee un texto
     private String leerTexto(String mensaje) {
         System.out.print(mensaje);
         return sc.nextLine();
     }
 
-    // Muestra un mensaje y lee un número (devuelve -1 si escriben letras)
     private int leerEntero(String mensaje) {
         System.out.print(mensaje);
         try {

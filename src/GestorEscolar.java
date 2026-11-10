@@ -12,10 +12,10 @@ public class GestorEscolar {
         Carrera industrial = new Carrera("Ingeniería Industrial");
         Carrera mecatronica = new Carrera("Mecatrónica");
 
-        sistemas.alta(new Alumno("Ana López", "A001", 3));
-        sistemas.alta(new Alumno("Luis Pérez", "A002", 5));
-        industrial.alta(new Alumno("María Gómez", "A003", 2));
-        mecatronica.alta(new Alumno("Carlos Ruiz", "A004", 4));
+        sistemas.alta(new Alumno("Ana López", "258484", 3));
+        sistemas.alta(new Alumno("Luis Pérez", "253877", 5));
+        industrial.alta(new Alumno("María Gómez", "259781", 2));
+        mecatronica.alta(new Alumno("Carlos Ruiz", "253718", 4));
 
         carreras.add(sistemas);
         carreras.add(industrial);
@@ -51,7 +51,7 @@ public class GestorEscolar {
             return "Esa matrícula ya está registrada.";
         }
         if (cuatrimestre < 1) {
-            return "Cuatrimestre no válido.";
+            return "Cuatrimestre no válido, ingrese numeros enteros.";
         }
         if (numCarrera < 1 || numCarrera > carreras.size()) {
             return "Carrera no válida.";
